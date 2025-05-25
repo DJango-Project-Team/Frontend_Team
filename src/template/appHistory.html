@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>동아리 신청 내역</title>
+    <link rel="stylesheet" href="appHistory.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://www.cju.ac.kr/common/images/layout/logo.png"
+        class="logo"
+      />
+      <nav>
+        <a href="#" class="nav-link">로그아웃</a>
+        <span class="separator">|</span>
+        <a href="#" class="nav-link">신청내역</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>신청내역</h2>
+      <table class="history-table">
+        <thead class="table-header">
+          <tr>
+            <th>번호</th>
+            <th>상태</th>
+            <th>지원동아리</th>
+            <th>신청일</th>
+            <th>상세내역</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>접수</strong></td>
+            <td><a href="#">CPR</a></td>
+            <td>2025-04-10</td>
+            <td class="detail"><a href="applyForm.html">상세내역보기</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>불합격</strong></td>
+            <td><a href="#">디스토션</a></td>
+            <td>2025-04-09</td>
+            <td class="detail"><a href="applyForm.html">상세내역보기</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>합격</strong></td>
+            <td><a href="#">햄사모</a></td>
+            <td>2025-04-12</td>
+            <td class="detail"><a href="applyForm.html">상세내역보기</a></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>합격</strong></td>
+            <td><a href="#">로켓단</a></td>
+            <td>2025-05-05</td>
+            <td class="detail"><a href="applyForm.html">상세내역보기</a></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>합격</strong></td>
+            <td><a href="#">스매시</a></td>
+            <td>2025-05-14</td>
+            <td class="detail"><a href="applyForm.html">상세내역보기</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="back">
+      <button class="back-button" onclick="location.href='#'">이전</button>
+    </div>
+  </body>
+</html>

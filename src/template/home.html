@@ -1,0 +1,351 @@
+<!-- 메인 홈화면 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>청주대학교 동아리</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".category-btn");
+      const cards = document.querySelectorAll(".club-card");
+
+      function filterClubs(category) {
+        cards.forEach((card) => {
+          card.style.display =
+            card.getAttribute("data-category") === category ? "block" : "none";
+        });
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          buttons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const category = button.getAttribute("data-category");
+          filterClubs(category);
+        });
+      });
+
+      filterClubs("공연");
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const cards = document.querySelectorAll(".club-card");
+      const moreBtn = document.querySelector(".more-btn");
+      const categoryButtons = document.querySelectorAll(".category-btn");
+      let currentCategory = "공연";
+      let visibleCount = 5;
+
+      function updateVisibleCards() {
+        let count = 0;
+        cards.forEach((card) => {
+          if (card.dataset.category === currentCategory) {
+            if (count < visibleCount) {
+              card.style.display = "block";
+              count++;
+            } else {
+              card.style.display = "none";
+            }
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      categoryButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentCategory = btn.dataset.category;
+          visibleCount = 5;
+          updateVisibleCards();
+        });
+      });
+
+      moreBtn.addEventListener("click", () => {
+        const totalInCategory = Array.from(cards).filter(
+          (card) =>
+            currentCategory === "전체" ||
+            card.dataset.category === currentCategory
+        );
+        const visibleInCategory = totalInCategory.filter(
+          (card) => card.style.display === "block"
+        );
+
+        if (visibleInCategory.length >= totalInCategory.length) {
+          alert("더 불러올 포스터가 없습니다.");
+          return;
+        }
+
+        visibleCount += 5;
+        updateVisibleCards();
+      });
+
+      updateVisibleCards();
+    });
+  </script>
+  <body>
+    <header>
+      <div class="top-bar">
+        <img src="./image/logo.jpg" alt="청주대학교 로고" class="logo" />
+        <div class="auth-links">
+          <a href="#" class="nav-link">로그인</a>
+          <span class="separator">|</span>
+          <a href="#" class="nav-link">회원가입</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-image">
+      <img src="./image/main.jpg" alt="메인 이미지" class="main-image" />
+    </div>
+
+    <main>
+      <section class="category">
+        <h2>분과별 추천</h2>
+        <div class="category-menu">
+          <button class="category-btn active" data-category="공연">공연</button>
+          <button class="category-btn" data-category="교양">교양</button>
+          <button class="category-btn" data-category="봉사">봉사</button>
+          <button class="category-btn" data-category="종교/사회">
+            종교<br />사회
+          </button>
+          <button class="category-btn" data-category="체육">체육</button>
+          <button class="category-btn" data-category="학술">학술</button>
+        </div>
+      </section>
+
+      <section class="club-list">
+        <div class="club-card" data-category="공연">
+          <a href="join.html?club=디스토션"
+            ><img src="./image/공연/디스토션.jpg" alt="디스토션"
+          /></a>
+          <a href="join.html?club=디스토션" class="club-name"
+            ><p>디스토션<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="공연">
+          <a href="join.html?club=시티코어"
+            ><img src="./image/공연/시티코어.jpg" alt="시티코어"
+          /></a>
+          <a href="join.html?club=시티코어" class="club-name"
+            ><p>시티코어<br /><span>3/10(월) ~ 3/19(수)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="공연">
+          <a href="join.html?club=어센틱"
+            ><img src="./image/공연/어센틱.jpg" alt="어센틱"
+          /></a>
+          <a href="join.html?club=어센틱" class="club-name"
+            ><p>어센틱<br /><span>3/15일(토) ~ 3/20(목)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="공연">
+          <a href="join.html?club=에이블"
+            ><img src="./image/공연/에이블.jpg" alt="에이블"
+          /></a>
+          <a href="join.html?club=에이블" class="club-name"
+            ><p>에이블<br /><span>3/15(토) ~ 3/23(일)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="공연">
+          <a href="join.html?club=울림"
+            ><img src="./image/공연/울림.jpg" alt="울림"
+          /></a>
+          <a href="join.html?club=울림" class="club-name"
+            ><p>울림<br /><span>3/10(월) ~ 3/21(금)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="공연">
+          <a href="join.html?club=트라이앵글"
+            ><img src="./image/공연/트라이앵글.jpg" alt="트라이앵글"
+          /></a>
+          <a href="join.html?club=트라이앵글" class="club-name"
+            ><p>트라이앵글<br /><span>2/25(화) ~ 3/21(금)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="교양">
+          <a href="join.html?club=달보드레"
+            ><img src="./image/교양/달보드레.jpg" alt="달보드레"
+          /></a>
+          <a href="join.html?club=달보드레" class="club-name"
+            ><p>달보드레<br /><span>3/18(화) ~ 3/19(수)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="교양">
+          <a href="join.html?club=사진예술연구회"
+            ><img src="./image/교양/사진예술연구회.jpg" alt="사진예술연구회"
+          /></a>
+          <a href="join.html?club=사진예술연구회" class="club-name"
+            ><p>사진예술연구회<br /><span>3/13(목) ~ 3/21(금)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="교양">
+          <a href="join.html?club=유스호스텔"
+            ><img src="./image/교양/유스호스텔.jpg" alt="유스호스텔"
+          /></a>
+          <a href="join.html?club=유스호스텔" class="club-name"
+            ><p>유스호스텔<br /><span>3/17(월) ~ 3/20(목)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="봉사">
+          <a href="join.html?club=RCY"
+            ><img src="./image/봉사/RCY.jpg" alt="RCY"
+          /></a>
+          <a href="join.html?club=RCY" class="club-name"
+            ><p>RCY<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="봉사">
+          <a href="join.html?club=도담도담"
+            ><img src="./image/봉사/도담도담.jpg" alt="도담도담"
+          /></a>
+          <a href="join.html?club=도담도담" class="club-name"
+            ><p>도담도담<br /><span>3/10(월) ~ 3/13(목)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="봉사">
+          <a href="join.html?club=동그라미"
+            ><img src="./image/봉사/동그라미.jpg" alt="동그라미"
+          /></a>
+          <a href="join.html?club=동그라미" class="club-name"
+            ><p>동그라미<br /><span>3/20(목) ~ 3/21(금)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="봉사">
+          <a href="join.html?club=무궁화야간학교"
+            ><img src="./image/봉사/무궁화야간학교.jpg" alt="무궁화야간학교"
+          /></a>
+          <a href="join.html?club=무궁화야간학교" class="club-name"
+            ><p>무궁화야간학교<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="봉사">
+          <a href="join.html?club=새마을"
+            ><img src="./image/봉사/새마을.jpg" alt="새마을"
+          /></a>
+          <a href="join.html?club=새마을" class="club-name"
+            ><p>새마을<br /><span>03/19(수) ~ 03/20(목)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="종교/사회">
+          <a href="join.html?club=CCC"
+            ><img src="./image/종교사회/CCC.jpg" alt="CCC"
+          /></a>
+          <a href="join.html?club=CCC" class="club-name"
+            ><p>CCC<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="종교/사회">
+          <a href="join.html?club=IVF"
+            ><img src="./image/종교사회/IVF.jpg" alt="IVF"
+          /></a>
+          <a href="join.html?club=IVF" class="club-name"
+            ><p>IVF<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="종교/사회">
+          <a href="join.html?club=불교동아리"
+            ><img src="./image/종교사회/불교동아리.jpg" alt="불교동아리"
+          /></a>
+          <a href="join.html?club=불교동아리" class="club-name"
+            ><p>불교동아리<br /><span>09/10(화) ~ 09/24(화)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=AC"
+            ><img src="./image/체육/AC.jpg" alt="AC"
+          /></a>
+          <a href="join.html?club=AC" class="club-name"
+            ><p>AC<br /><span>03/13(목) ~ 04/18(금)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=DUNK"
+            ><img src="./image/체육/DUNK.jpg" alt="DUNK"
+          /></a>
+          <a href="join.html?club=DUNK" class="club-name"
+            ><p>DUNK<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=PLAYLIST"
+            ><img src="./image/체육/PLAYLIST.jpg" alt="PLAYLIST"
+          /></a>
+          <a href="join.html?club=PLAYLIST" class="club-name"
+            ><p>PLAYLIST<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=나인파이터즈"
+            ><img src="./image/체육/나인파이터즈.jpg" alt="나인파이터즈"
+          /></a>
+          <a href="join.html?club=나인파이터즈" class="club-name"
+            ><p>나인파이터즈<br /><span>상시모집</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=블루불스"
+            ><img src="./image/체육/블루불스.jpg" alt="블루불스"
+          /></a>
+          <a href="join.html?club=블루불스" class="club-name"
+            ><p>블루불스<br /><span>03/18(토) ~ 03월 20일(목)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=산악부"
+            ><img src="./image/체육/산악부.jpg" alt="산악부"
+          /></a>
+          <a href="join.html?club=산악부" class="club-name"
+            ><p>산악부<br /><span>03/06(목) ~ 03/21일(금)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=스매시"
+            ><img src="./image/체육/스매시.jpg" alt="스매시"
+          /></a>
+          <a href="join.html?club=스매시" class="club-name"
+            ><p>스매시<br /><span>03/17(월) ~ 03/20일(목)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=지예무"
+            ><img src="./image/체육/지예무.jpg" alt="지예무"
+          /></a>
+          <a href="join.html?club=지예무" class="club-name"
+            ><p>지예무<br /><span>03/18(화) ~ 03/25일(화)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="체육">
+          <a href="join.html?club=핀클럽"
+            ><img src="./image/체육/핀클럽.jpg" alt="핀클럽"
+          /></a>
+          <a href="join.html?club=핀클럽" class="club-name"
+            ><p>핀클럽<br /><span>03/18(화) ~ 03/19일(수)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="학술">
+          <a href="join.html?club=YLC"
+            ><img src="./image/학술/YLC.jpg" alt="YLC"
+          /></a>
+          <a href="join.html?club=YLC" class="club-name"
+            ><p>YLC<br /><span>08/29(목) ~ 09/03일(화)</span></p></a
+          >
+        </div>
+        <div class="club-card" data-category="학술">
+          <a href="join.html?club=청송신독"
+            ><img src="./image/학술/청송신독.jpg" alt="청송신독"
+          /></a>
+          <a href="join.html?club=청송신독" class="club-name"
+            ><p>청송신독<br /><span>01/30(목) ~ 03/01일(토)</span></p></a
+          >
+        </div>
+      </section>
+
+      <div class="btn">
+        <button class="more-btn">더보기 &gt;</button>
+      </div>
+    </main>
+  </body>
+</html>
