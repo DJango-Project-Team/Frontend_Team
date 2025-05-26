@@ -1,0 +1,70 @@
+<!--신청내역에서 상세내역보기 클릭시 나타나는 사이트( 신청 버튼 -> 이전 버튼 )-->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상세 내역</title>
+    <link rel="stylesheet" href="applyFormStyle.css" />
+    <style>
+      #name,
+      #club {
+        width: 30%;
+      }
+    </style>
+    <header>
+      <a href="home.html">
+        <img
+        src="../image/logo.jpg"
+        class="logo"
+        />
+      <nav>
+        <a href="#" class="nav-link">로그아웃</a>
+        <span class="separator">|</span>
+        <a href="appHistory.html" class="nav-link">신청내역</a>
+      </nav>
+    </header>
+  </head>
+  <body>
+    <div class="container">
+      <h2>동아리 가입 신청</h2>
+      <form>
+        <div class="form-group">
+          <label for="club">지원 동아리</label>
+          <input type="text" id="club" name="club" required />
+        </div>
+        <div class="form-group">
+          <label for="major">학과</label>
+          <input type="text" id="major" name="major" required />
+        </div>
+        <div class="form-group">
+          <label for="studentId">학번</label>
+          <input type="text" id="studentId" name="studentId" required />
+        </div>
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">이메일</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="motivation">지원동기</label>
+          <textarea id="motivation" name="motivation" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="experience">관련된 경험</label>
+          <textarea id="experience" name="experience" rows="4"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <div class="submit">
+      <button type="submit" class="submit-button" onclick="location.href='appHistory.html'">
+        이전
+      </button>
+    </div>
+  </body>
+</html>

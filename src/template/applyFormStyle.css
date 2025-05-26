@@ -41,10 +41,10 @@ body {
 
 .container {
   max-width: 60%;
-  margin: 50px auto;
-  margin-bottom: 20px;
+  margin: 50px auto 20px;
+  /*margin-bottom: 20px;*/
   background: white;
-  padding: 40px 50px 40px;
+  padding: 40px 50px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
