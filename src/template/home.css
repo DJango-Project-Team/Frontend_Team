@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px 20px 80px;
+  padding: 15px 80px 15px 80px;
   background-color: white;
 }
 
@@ -62,13 +62,15 @@ a:hover {
 .category-btn {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
-  font-weight: bold;
   vertical-align: top;
   border: none;
   font-size: 15px;
   color: #8f8f8f;
 }
 
+.category-btn:hover{
+  font-weight: bold;
+}
 .category-btn.active {
   font-weight: bold;
   color: black;
@@ -126,3 +128,4 @@ a:hover {
   cursor: pointer;
   font-size: 14px;
 }
+

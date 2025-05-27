@@ -6,7 +6,7 @@ function navigateTo(url, boxSelector) {
     box.classList.add("box-slide-out");
     setTimeout(() => {
       window.location.href = url;
-    }, 600);
+    }, 200);
   } else {
     window.location.href = url;
   }
@@ -31,6 +31,26 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toSignup) {
     toSignup.addEventListener("click", () => {
       navigateTo("signup.html", ".login-box");
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const passwordInput = document.getElementById("password");
+
+  if (passwordInput) {
+    passwordInput.addEventListener("focus", () => {
+      if (passwordInput.value === "비밀번호") {
+        passwordInput.value = "";
+        passwordInput.type = "password";
+      }
+    });
+
+    passwordInput.addEventListener("blur", () => {
+      if (passwordInput.value === "") {
+        passwordInput.type = "text";
+        passwordInput.value = "비밀번호";
+      }
     });
   }
 });

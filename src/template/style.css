@@ -1,4 +1,3 @@
-@import "applyFormStye.css";
 
 body {
   margin: 0;
@@ -9,7 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 80px 15px 80px;
   background-color: white;
 }
 
@@ -40,7 +39,7 @@ main {
 .signup-container {
   display: flex;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 /* 공통: 로그인/회원가입 입력 박스 */
@@ -50,33 +49,35 @@ main {
   background-position: center;
   padding: 60px 50px;
   color: white;
-  width: 350px;
-  height: 400px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4), -10px 0 20px rgba(0, 0, 0, 0.4);
+  width: 320px;
+  height: 380px;
   border: none;
 }
 
 /* 로그인용 배경 */
 .login-box {
   background: linear-gradient(rgba(0, 84, 166, 0.8), rgba(0, 84, 166, 0.8)),
-    url("https://www.cju.ac.kr/site/www/images/contents/cts4417_img2.jpg");
+    url('../image/로그인img.jpg');
   background-size: cover;
   background-position: center;
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* 회원가입용 배경 */
 .signup-box {
   background: linear-gradient(rgba(0, 84, 166, 0.8), rgba(0, 84, 166, 0.8)),
-    url("https://www.cju.ac.kr/site/www/images/contents/cts4417_img1.jpg");
+    url('../image/회원가입img.jpg');
   background-size: cover;
   background-position: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-.login-box h2 {
-  margin-bottom: 40px;
+.login-box h3 {
+  /*margin-top: 60px;*/
+  /*margin-bottom: 40px;*/
 }
 
-.signup-box h2 {
+.signup-box h3 {
   margin-bottom: 25px;
 }
 
@@ -84,18 +85,18 @@ main {
 .signup-box label {
   display: block;
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .login-box input {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
+  padding-bottom: 11px;
+  margin-top: 20px;
   border: none;
   border-bottom: 2px solid white;
   background: transparent;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .signup-box input {
@@ -148,7 +149,7 @@ main {
   border: 1px solid #8f8f8f;
   padding: 10px 20px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -163,7 +164,7 @@ main {
 
 @keyframes slideIn {
   from {
-    transform: translateX(50%);
+    transform: translateX(30%);
     opacity: 0;
   }
   to {
@@ -184,9 +185,9 @@ main {
 }
 
 .box-slide-in {
-  animation: slideIn 0.9s;
+  animation: slideIn 0.8s ;
 }
 
 .box-slide-out {
-  animation: slideOut 0.6s ease-in;
+  animation: slideOut 0.6s ease-in-out;
 }
