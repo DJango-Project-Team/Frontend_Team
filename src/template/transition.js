@@ -36,21 +36,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const passwordInput = document.getElementById("password");
+  const fields = [
+    { id: "name", placeholder: "이름" },
+    { id: "email", placeholder: "이메일" },
+    { id: "id", placeholder: "아이디" },
+    { id: "password", placeholder: "비밀번호", isPassword: true }
+  ];
 
-  if (passwordInput) {
-    passwordInput.addEventListener("focus", () => {
-      if (passwordInput.value === "비밀번호") {
-        passwordInput.value = "";
-        passwordInput.type = "password";
+  fields.forEach(field => {
+    const input = document.getElementById(field.id);
+
+    if (!input) return;
+
+    input.addEventListener("focus", () => {
+      if (input.value === field.placeholder) {
+        input.value = "";
+        if (field.isPassword) input.type = "password";
       }
     });
 
-    passwordInput.addEventListener("blur", () => {
-      if (passwordInput.value === "") {
-        passwordInput.type = "text";
-        passwordInput.value = "비밀번호";
+    input.addEventListener("blur", () => {
+      if (input.value === "") {
+        input.type = field.isPassword ? "text" : input.type;
+        input.value = field.placeholder;
       }
     });
-  }
+  });
 });
+
