@@ -6,7 +6,7 @@ function navigateTo(url, boxSelector) {
     box.classList.add("box-slide-out");
     setTimeout(() => {
       window.location.href = url;
-    }, 200);
+    }, 150);
   } else {
     window.location.href = url;
   }
