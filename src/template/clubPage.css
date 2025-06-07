@@ -4,6 +4,7 @@ header {
   align-items: center;
   padding: 15px 80px 15px 80px;
   background-color: white;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .logo {
@@ -61,7 +62,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*justify-content: center;*/
   padding-right: 30px;
 }
 
@@ -89,7 +89,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   padding-left: 30px;
 }
 
@@ -97,12 +97,14 @@ body {
   font-size: 20px;
   margin-bottom: 20px;
   background-color: #e6eef7;
-  padding: 5px 10px;
-  display: inline-block;
+  padding: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .apply-button {
-  margin-top: 20px;
+  margin: 20px auto 0 auto;
   background-color: #0054a6;
   color: white;
   padding: 10px 20px;
@@ -111,6 +113,8 @@ body {
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+  display: block;
+  width: fit-content;
 }
 
 .apply-button:hover {

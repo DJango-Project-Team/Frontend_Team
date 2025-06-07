@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Inria Sans";
+  font-family: "sans-serif";
 }
 
 header {
@@ -51,9 +51,10 @@ main {
   background-position: center;
   padding: 60px 50px;
   color: white;
-  width: 340px;
-  height: 400px;
+  width: 320px;
+  height: 380px;
   border: none;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
